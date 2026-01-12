@@ -1,0 +1,88 @@
+.footer {
+    background: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.footer-title {
+    font-size: 28px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    animation: pop 0.6s ease-out forwards;
+}
+
+@keyframes pop {
+    0% { transform: scale(0.6); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+
+.contact-info p {
+    margin: 6px 0;
+    font-size: 16px;
+    opacity: 0.8;
+    animation: pop 0.6s ease-out forwards;
+}
+
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+
+.social-item {
+    background: #222;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+    border: 1px solid transparent;
+    animation: pop 0.6s ease-out forwards;
+}
+
+
+.social-item:hover {
+    transform: translateY(-5px);
+    border-color: #fff;
+}
+
+
+.linkedin:hover { box-shadow: 0 0 12px #0a66c2; }
+.whatsapp:hover { box-shadow: 0 0 12px #25d366; }
+.instagram:hover { box-shadow: 0 0 12px #e1306c; }
+
+
+.copy {
+    margin-top: 25px;
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    margin-top: auto;
+}

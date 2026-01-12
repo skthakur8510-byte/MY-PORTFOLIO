@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block contenar %}
+    <!-- --------------------HOME-SECTION------------------------------------ -->
+       <hr> {% for i in pro %}
+        <div class="main">
+            <!-- <h5>HOME</h5> -->
+            <div class="text">
+                <h2>&nbsp;&nbsp;Hello, I'm <span>{{i.name}}</span> <br>I Design & Build Dynamic Web Applications.</h2>
+                {% comment %} <button><a href="#contact">Reach Out</a></button> {% endcomment %}
+                <a href="#contact" class="btn btn-primary">Reach Out</a>
+
+            </div>
+            <div class="photo">
+                <img src="/media/{{ i.photo }}" alt="">
+
+            </div>
+        </div>
+        {% endfor %} <hr>
+        <!-- --------------------HOME-SECTION------------------------------------ -->
+
+        <!-- --------------------ABOUT-SECTION------------------------------------ -->
+
+        {% for i in pro %}
+        <h5 id="ABOUT" >ABOUT ME </h5>
+        <div class="main_2" >
+            
+            <div class="photo_2">
+                <img src="/static/image/images/about_image/2.webp" alt="">
+            
+            </div>
+            <div class="intro">
+               <p>{{i.about | slice:":245" }}...</p> 
+               <button><a href="{% url 'ABOUT' %}">MORE...</a></button>
+            </div>
+        </div>
+        {% endfor %} <hr>
+        <!-- --------------------ABOUT-SECTION------------------------------------ -->
+
+        <!-- --------------------SKILL-SECTION------------------------------------ -->
+        {% for i in pro %}
+        <h5 id="SKILLS" >SKILLS</h5>
+            <div class="main_3">
+                <div class="skil">
+                    {% for s in i.skill.all %}
+                        <span>{{s.name}}</span><br>
+                    {% endfor %}  
+                </div>
+                <div class="photo_2">
+                    <!-- <img src="/static/image/3.webp" alt=""> -->
+                
+                </div>
+            </div>
+        {% endfor %} <hr>
+        <!-- --------------------SKILL-SECTION------------------------------------ -->
+
+        <!-- --------------------PROJECT-SECTION------------------------------------ -->
+        {% for i in pro %}
+        <h5 id="PROJECTS" >PROJECTS</h5>
+        <div class="main_4">
+            
+        
+            {% for o in i.projects.all %}
+            <div class="card project-card" 
+                 style="width: 18rem; background-image: url('/media/{{ o.image }}');">
+        
+                <div class="card-body overlay">
+                    {% comment %} <h5 class="card-title">{{ o.title }}</h5> {% endcomment %}
+                    <p class="card-text">{{ o.description | safe}}</p>
+                    <a href="{{ o.link }}" class="btn btn-primary">Vist...</a>
+                </div>
+        
+            </div>
+            {% endfor %}
+        </div>
+
+        {% endfor %} 
+
+
+        <!-- --------------------PROJECT-SECTION------------------------------------ -->
+
+
+
+    
+
+    <!-- </nav> -->
+
+{% endblock %}

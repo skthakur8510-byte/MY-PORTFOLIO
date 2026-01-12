@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block contenar %}
+
+    {% for i in pro_1 %}
+    <div class="About" >
+        <div class="About_photo">
+            <img src="/media/{{i.photo}}" alt="">
+        </div>
+        <div class="About_intro">
+            <h5>ABOUT ME </h5>
+        <p>{{i.about | linebreaksbr }}</p> 
+        {% comment %} <button><a href="{% url 'ABOUT/' %}">MORE...</a></button> {% endcomment %}
+        </div>
+    </div>
+    {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
